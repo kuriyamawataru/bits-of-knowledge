@@ -1,0 +1,10 @@
+%h2.text-center.text-primary
+  新規商品の追加
+.container
+  = simple_form_for @product do |f|
+    = f.input :name
+    = f.input :description
+    = f.input :price
+    = f.input :unit
+    .mt-20
+      = f.button :button,{name:'submit',value: '1',class: 'btn btn-primary'}
