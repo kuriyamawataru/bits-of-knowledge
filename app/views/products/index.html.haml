@@ -3,5 +3,11 @@
   %p
     = product.name
   %p
+    = product.description
+  %p
     = product.display_price
+  = link_to '詳細', "/products/#{product.id}"
+  -# .button
+  -#   %button.btn.btn-primary.btn-sm{:type => "button"} 買い物かごに追加する
+
   %hr

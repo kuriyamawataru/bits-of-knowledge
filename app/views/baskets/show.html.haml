@@ -1,0 +1,9 @@
+.container
+  %h3.center.mb-30
+    買い物かごの中身
+  %ul.collection.with-header
+    - @products.each do |product|
+      %li.collection-item
+        = product.name
+        = product.display_price
+        =link_to '削除', product_delete_in_baskets_path(product), method: :post
