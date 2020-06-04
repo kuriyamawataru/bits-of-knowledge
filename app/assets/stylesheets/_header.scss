@@ -1,0 +1,21 @@
+.navbar-default{
+  background-color: #222;
+  
+  .navbar-brand{
+    color: white;
+  }
+  .navbar-nav{
+    .active{
+      a{
+        background-color: #222;
+        color: white;
+      }
+    }
+
+    li{
+      a{
+        color: white;
+      }
+    }
+  }
+}

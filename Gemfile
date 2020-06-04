@@ -39,6 +39,14 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'faker'
+  gem 'dotenv-rails'
+  gem 'pry-rails'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+  gem 'capistrano-rails-console'
 end
 
 group :development do
@@ -51,11 +59,21 @@ group :development do
   gem 'letter_opener'
 end
 
+group :production do
+  gem 'unicorn'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'hamlit'
 gem 'active_decorator'
 gem 'simple_form'
-gem 'bootstrap-sass', '~> 3.3.7'
-gem "jquery-ui-rails"
+gem 'bootstrap-sass'
+gem "jquery-rails"
+gem 'stripe'
+gem 'pry-rails'
+gem 'font-awesome-sass'
+gem 'rails-i18n'
+gem 'acts-as-taggable-on'
+gem 'mini_racer'

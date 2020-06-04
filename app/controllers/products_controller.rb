@@ -10,9 +10,9 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path, notice: '作成に成功'
+      redirect_to root_path
     else
-      flash[:error] = '作成に失敗'
+      # flash[:error] = '作成に失敗'
       render :new
     end
   end
@@ -26,6 +26,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :price, :unit)
+    params.require(:product).permit(:name, :description, :price, :explanation, :tag_list).merge(seller_id: current_user.id)
   end
 end
