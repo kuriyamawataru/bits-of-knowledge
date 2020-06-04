@@ -1,10 +1,12 @@
 %h2.text-center.text-primary
-  新規商品の追加
+  商品記事の投稿
 .container
   = simple_form_for @product do |f|
-    = f.input :name
-    = f.input :description
-    = f.input :price
-    = f.input :unit
-    .mt-20
-      = f.button :button,{name:'submit',value: '1',class: 'btn btn-primary'}
+    = f.input :name, label: '商品記事名'
+    = f.input :explanation, label: '記事内容', placeholder: '無料で見られる内容を入力してください'
+    = f.input :description, placeholder: '購入者のみ見られる内容を入力してください',label: '記事内容（購入者のみ）'
+    = f.input :tag_list, label: 'タグ', value: @product.tag_list.join(',')
+    = f.input :price, label: '価格'
+    .new-button
+      = f.button :button,{name:'submit',value: '1',class: 'btn btn-primary'} do
+        投稿する

@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: think-mart_development
+  database: bits-of-knowledge_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: think-mart_test
+  database: bits-of-knowledge_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: think-mart_production
-  username: think-mart
+  database: bits-of-knowledge_production
+  username: bits-of-knowledge
   password: <%= ENV['THINK-MART_DATABASE_PASSWORD'] %>

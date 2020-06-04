@@ -1,12 +1,11 @@
-.product
-  %p
-    = @product.name
-
-  %p
-    = @product.description
-
-  %p
-    = @product.display_price
-.button
-  = link_to product_add_to_baskets_path(@product), method: :post do
-    %button.btn.btn-primary.btn-sm{:type => "button"} 買い物かごに追加する
+.container
+  .title
+    %h1
+      = @product.name
+  .main-content
+    .description
+      %p
+        = simple_format @product.description
+    .explanation
+      %p
+        = simple_format @product.description
