@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: bits-of-knowledge_production
-  username: bits-of-knowledge
-  password: <%= ENV['THINK-MART_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
