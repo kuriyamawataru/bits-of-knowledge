@@ -39,7 +39,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'faker'
-  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'capistrano'
   gem 'capistrano-rbenv'
@@ -77,3 +76,4 @@ gem 'font-awesome-sass'
 gem 'rails-i18n'
 gem 'acts-as-taggable-on'
 gem 'mini_racer'
+gem 'dotenv-rails'
