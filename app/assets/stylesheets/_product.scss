@@ -2,10 +2,6 @@
   padding-top: 100px;
 }
 
-.title{
-  text-align: center;
-}
-
 .main-content{
 
 
@@ -46,8 +42,60 @@
  }
 }
 
-//商品一覧ページ
+//商品記事一覧ページ
+.product.container{
+  .title{
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 50px;
+  }
+  .box{
+    background-color: white;
+    padding-bottom: 10px;
+    
+    .thumbnail{
+      padding: 0;
+      margin: 0;
+    }
 
+    .product-title{
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 10px;
+      line-height: 20px;
+    }
+    .info{
+      text-align: right;
+      font-size: 10px;
+      color: #999;
+      padding-bottom: 8px;
+      margin: 0 10px 0 10px;
+      border-bottom: 1px solid #999;
+      .name{
+        font-size: 10px;
+        margin-left: 170px;
+      }
+      .date{
+        margin-left: 20px;
+        margin-right: 10px;
+      }
+    }
+    .explanation{
+      margin: 10px 10px 0px 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #999;
+    }
+    .tag{
+      text-align: right;
+      margin: 10px 10px 0 10px;
+
+    }
+
+  
+  }
+}
 
 
 
