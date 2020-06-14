@@ -11,11 +11,14 @@
       #navbar.collapse.navbar-collapse
         %ul.nav.navbar-nav
           %li.active
-            %a{:href => "/"} ホーム
+            = link_to "ホーム", root_path
 
           %li.active
             = link_to "商品記事一覧", products_path
 
+          %li.active
+            = link_to "新規投稿", new_product_path
+          
           %li.active
             = link_to "ログアウト", destroy_user_session_path, method: :delete
     - elsif current_admin.present?

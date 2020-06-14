@@ -2,18 +2,16 @@
   padding-top: 100px;
 }
 
+// 商品詳細ページ
 .main-content{
-
 
 .description {
   width: auto;
   padding:0 1em;
-  background: linear-gradient(#ccc 1px, transparent 1px) #fffbf2;
+  background: #fffbf2;
   background-size: auto 2.5em;
   line-height: 2.5em;
-  border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  border: 1px solid #ccc;
   overflow: hidden;
   margin-top: 100px;
 
@@ -27,14 +25,13 @@
 .explanation {
   width: auto;
   padding:0 1em;
-  background: linear-gradient(#ccc 1px, transparent 1px) #fffbf2;
+  background:  #fffbf2;
   background-size: auto 2.5em;
   line-height: 2.5em;
-  border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  border: 1px solid #ccc;
   overflow: hidden;
   margin-top: 30px;
+  text-align: center;
   
   p{
     margin: 0;
@@ -92,9 +89,21 @@
       margin: 10px 10px 0 10px;
 
     }
-
-  
   }
+}
+
+// 記事投稿
+.container{
+  .sub-title{
+    font-weight: bold;
+  }
+  .uk-htmleditor{
+    margin-bottom: 30px;
+  
+  .uk-htmleditor-navbar{
+    background: #33333329;
+  }
+ }
 }
 
 
