@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
   root 'home#index'
-  resources :home, only: %i(index)
   resource :basket, only: %i(show)
   resource :charge, only: %i(create)
 
