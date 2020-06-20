@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
+  mount_uploader :thumbnail, ThumbnailUploader
   acts_as_taggable
   has_many :basket_products, dependent: :destroy
-  has_many :purchase_product_records, dependent: :destroy
+  has_many :purchase_records, dependent: :destroy
 
 
   validates :name, presence: true 

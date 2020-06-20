@@ -7,13 +7,13 @@
 .container
   = simple_form_for @product do |f|
     = f.input :name, label: '商品記事名'
-    -# = f.input :explanation, label: '記事内容', placeholder: '無料で見られる内容を入力してください'
+    = f.file_field :thumbnail, label: 'サムネイル画像'
     %p.sub-title
       記事内容（無料記事）
-    = f.text_area :explanation,{"data-uk-htmleditor" => "{markdown:true}",placeholder: "無料で見られる内容を入力をしてください",class: 'uploadable'}
+    = f.text_area :explanation,{"data-uk-htmleditor" => "{markdown:true}",class: 'uploadable'}
     %p.sub-title
       記事内容（有料記事）
-    = f.text_area :description, class: "uploadable"
+    = f.text_area :description,{"data-uk-htmleditor" => "{markdown:true}"}
     = f.input :tag_list, label: 'タグ', value: @product.tag_list.join(',')
     = f.input :price, label: '価格'
     .new-button

@@ -1,9 +1,6 @@
 = render "/layouts/header"
 
 
-%textarea{"data-uk-htmleditor" => "{markdown:true}"} # Write Something Here!
-
-
 
 .product.container
   %span.title
@@ -12,16 +9,16 @@
     .col-xs-6.col-md-4
       .box
         .thumbnail
-          = image_tag "test_image.jpg",class:"product-image"
+          = image_tag @product.thumbnail,class:"product-image"
         .product-title
-          カワウソが絶滅危惧種に認定される。今後、国内繁殖のみの販売に限定
+          = @product.name
         .info
           %span.name
             わたる
           %span.date
             2020/06/04
         .explanation
-          癒される存在として知られる「カワウソ」そんなカワウソの生態系が脅かされているのである 
+          = @product.explanation
         .tag
           動物　環境　ペット
     .col-xs-6.col-md-4

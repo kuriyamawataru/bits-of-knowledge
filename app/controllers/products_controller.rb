@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
+    @product = Product.find(8)
+    @explanation= @product.explanation
   end
 
   def new
@@ -19,6 +21,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @current_user_record = PurchaseRecordProduct.where(purchase_record: current_user.id)
+    binding.pry
   end
 
  
@@ -26,6 +30,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :price, :explanation, :tag_list).merge(seller_id: current_user.id)
+    params.require(:product).permit(:name, :description, :price, :explanation, :tag_list, :thumbnail).merge(seller_id: current_user.id)
   end
 end

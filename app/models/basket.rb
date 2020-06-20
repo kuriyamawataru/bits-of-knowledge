@@ -1,5 +1,4 @@
 class Basket < ApplicationRecord
-  USD_RATE = 106.freeze
   has_many :basket_products, dependent: :destroy
   has_many :products, through: :basket_products
 

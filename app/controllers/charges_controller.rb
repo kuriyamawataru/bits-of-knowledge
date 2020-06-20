@@ -5,9 +5,7 @@ class ChargesController < ApplicationController
     product_ids = params[:product_ids].map(&:to_i)
 
     products = current_user.basket.products.where(id: product_ids)
-    total_jpy = products.where(unit: :yen).sum(:price)
-    total_usd = products.where(unit: :usd).sum(:price)
-    total = total_jpy + total_usd * Basket::USD_RATE
+    total = products.sum(:price)
 
     basket_products = current_user.basket.basket_products.where(product_id: product_ids)
     basket_products.each(&:destroy!)

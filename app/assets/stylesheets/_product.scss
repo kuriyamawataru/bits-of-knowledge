@@ -3,23 +3,27 @@
 }
 
 // 商品詳細ページ
+.title{
+margin-top: 30px;
+}
 .main-content{
 
-.description {
-  width: auto;
-  padding:0 1em;
-  background: #fffbf2;
-  background-size: auto 2.5em;
-  line-height: 2.5em;
-  border: 1px solid #ccc;
-  overflow: hidden;
-  margin-top: 100px;
-
-  p{
-    margin: 0;
-  }
+  .description {
+    width: auto;
+    padding:0 1em;
+    background: #fffbf2;
+    background-size: auto 2.5em;
+    line-height: 3.0em;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    margin-top: 100px;
+    padding-top: 30px;
+    padding-bottom: 20px;
 
 
+  //   p{
+  //     margin: 0;
+  //  }
 }
 
 .explanation {
@@ -27,17 +31,23 @@
   padding:0 1em;
   background:  #fffbf2;
   background-size: auto 2.5em;
-  line-height: 2.5em;
+  line-height: 3.0em;
   border: 1px solid #ccc;
   overflow: hidden;
   margin-top: 30px;
-  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
   
   p{
     margin: 0;
   }
  }
 }
+.button{
+  text-align: center;
+  margin-top: 30px;
+}
+
 
 //商品記事一覧ページ
 .product.container{
@@ -72,7 +82,6 @@
       border-bottom: 1px solid #999;
       .name{
         font-size: 10px;
-        margin-left: 170px;
       }
       .date{
         margin-left: 20px;
@@ -83,6 +92,8 @@
       margin: 10px 10px 0px 10px;
       padding-bottom: 10px;
       border-bottom: 1px solid #999;
+      height: 80px;
+      overflow: hidden;
     }
     .tag{
       text-align: right;

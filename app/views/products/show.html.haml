@@ -4,10 +4,28 @@
   .title
     %h1
       = @product.name
-  .main-content
-    .description
-      = simple_format @product.description
-    .explanation
-      = markdown(@product.explanation)
+
+  - if @current_user_record.product_id == @product.id?
+    .main-content
+      .explanation
+        = markdown(@product.explanation)
+    
+      .description
+        = markdown(@product.description)
+    -# .button
+    -#   = link_to product_add_to_baskets_path(@product), method: :post do
+    -#     %button.btn.btn-primary.btn-lg{:type => "button"} 買い物かごに追加する 
+  - else
+    .main-content
+      .explanation
+        = markdown(@product.explanation)
+    
+      .description
+        = markdown(@product.description)
+    .button
+      = link_to product_add_to_baskets_path(@product), method: :post do
+        %button.btn.btn-primary.btn-lg{:type => "button"} 買い物かごに追加する 
+
+
 
 = render "/layouts/footer"
