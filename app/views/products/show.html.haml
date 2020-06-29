@@ -16,7 +16,7 @@
             %span.badge= tag
 
     - if user_signed_in?
-      - if @current_user_record.include?(@product.id) || @product.seller_id == current_user_id
+      - if @current_user_record.include?(@product.id) || @product.seller_id == current_user.id
         .main-content
           .explanation
             = markdown(@product.explanation)
