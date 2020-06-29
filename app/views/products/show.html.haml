@@ -15,15 +15,25 @@
           - @product.tag_list.each do |tag|
             %span.badge= tag
 
-
-    - if @current_user_record.include?(@product.id)
-      .main-content
-        .explanation
-          = markdown(@product.explanation)
-      
-        .description
-          = markdown(@product.description)
-    - else
+    - if user_signed_in?
+      - if @current_user_record.include?(@product.id) || @product.seller_id == current_user_id
+        .main-content
+          .explanation
+            = markdown(@product.explanation)
+        
+          .description
+            = markdown(@product.description)
+      - else
+        .main-content
+          .explanation
+            = markdown(@product.explanation)
+          .purchase-guide
+            %p.next
+              続きは購入後、ご覧頂けます   
+            .button
+              = link_to product_add_to_baskets_path(@product), method: :post do
+                %button.btn.btn-primary.btn-lg{:type => "button"} 買い物かごに追加する 
+    -else
       .main-content
         .explanation
           = markdown(@product.explanation)
@@ -33,7 +43,7 @@
           .button
             = link_to product_add_to_baskets_path(@product), method: :post do
               %button.btn.btn-primary.btn-lg{:type => "button"} 買い物かごに追加する 
-
+     
 
 
 = render "/layouts/footer"

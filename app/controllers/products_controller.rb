@@ -20,7 +20,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @current_user_record = PurchaseRecordProduct.where(purchase_record: current_user.id).pluck(:product_id)
+    if user_signed_in?
+      @current_user_record = PurchaseRecordProduct.where(purchase_record: current_user.id).pluck(:product_id)
+    end
   end
 
   def search
