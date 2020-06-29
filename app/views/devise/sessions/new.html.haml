@@ -1,0 +1,23 @@
+= render "/layouts/header"
+
+.container
+  .devise-box
+    %h2.session-title 
+      ログイン
+
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :Eメール, class:'input-section'
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email",class:"devise-input"
+      .field
+        = f.label :パスワード, class:'input-section'
+        %br/
+        = f.password_field :password, autocomplete: "current-password",class:"devise-input"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .actions
+        = f.submit "ログイン",class:'btn btn-primary btn-lg'
+= render "/layouts/footer"

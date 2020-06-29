@@ -1,3 +1,4 @@
+
 class CreatePurchaseRecordProducts < ActiveRecord::Migration[5.0]
   def change
     create_table :purchase_record_products do |t|

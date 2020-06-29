@@ -2,65 +2,133 @@
   padding-top: 100px;
 }
 
-// 商品詳細ページ
-.title{
-margin-top: 30px;
+.container{
+  letter-spacing: .04em;
 }
-.main-content{
+// 商品詳細ページ
+.product{
+  margin: 0 auto;
+  width: 700px;
 
+  .product-top{
+    background: white;
+
+    .product-title{
+      margin: 0 auto;
+      .thumbnail{
+        border: 0;
+      }
+
+      .date{
+        font-size: 15px;
+        margin-top: 20px;
+        background-color: white;
+        a{
+          color: white;
+          background: black;
+          padding: 0px 4px;
+          display: inline-block;
+          margin-top: 20px;
+          margin-left: 10px;
+          margin-bottom: 7px;
+        }
+      }
+    }
+    .main-title{
+      margin: 10px 13px 0 13px;
+      background: white;
+      color: #111;
+      font-size: 24px;
+      font-weight: 700;
+      width: 670px;
+    }
+    .tag{
+      margin: 10px 13px 0 13px;
+      padding-bottom: 26px;
+      border-bottom: solid 1px black;
+      display: block;
+  
+    }
+    
+  }
+  .main-content{
+
+    .explanation {
+      padding:0 1em;
+      background:  white;
+      line-height: 1.5em;
+      margin: 0 auto;
+      padding-top: 30px;
+      padding-bottom: 20px;
+      
+      p{
+        margin: 0;
+      }
+  }
   .description {
-    width: auto;
     padding:0 1em;
-    background: #fffbf2;
-    background-size: auto 2.5em;
-    line-height: 3.0em;
-    border: 1px solid #ccc;
-    overflow: hidden;
+    background: white;
+    line-height: 1.5em;
     margin-top: 100px;
     padding-top: 30px;
     padding-bottom: 20px;
-
-
-  //   p{
-  //     margin: 0;
-  //  }
-}
-
-.explanation {
-  width: auto;
-  padding:0 1em;
-  background:  #fffbf2;
-  background-size: auto 2.5em;
-  line-height: 3.0em;
-  border: 1px solid #ccc;
-  overflow: hidden;
-  margin-top: 30px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  
-  p{
-    margin: 0;
   }
- }
-}
-.button{
-  text-align: center;
-  margin-top: 30px;
-}
+  .purchase-guide{
+    padding-top: 8px;
+  }
+  .next{
+    font-size: 19px;
+    color: red;
+    font-weight: 700;
+    text-align: left;
+  }
+  
 
+  }
+  .button{
+    text-align: center;
+    margin-top: 30px;
+  }
+}
 
 //商品記事一覧ページ
-.product.container{
+.container{
   .title{
     font-size: 18px;
     font-weight: bold;
     display: block;
     margin-bottom: 30px;
     margin-top: 50px;
+    padding-left: 15px;
+  }
+  .search{
+    text-align: center;
+    margin: 50px 0px;
+    }
+
+  .search_field{
+    width: 800px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 20px;
+  }
+  .search_button{
+    width: 80px;
+    height: 40px;
+    color: #000000a1
+  }
+
+  .product-link{
+    color: black;;
+  }
+
+  .product-link:hover{
+    text-decoration: none;
   }
   .box{
     background-color: white;
     padding-bottom: 10px;
+    margin-bottom: 20px;
     
     .thumbnail{
       padding: 0;
@@ -70,11 +138,11 @@ margin-top: 30px;
     .product-title{
       font-size: 18px;
       font-weight: bold;
-      margin: 10px 10px;
+      margin: 10px 0px 0px 10px;
       line-height: 20px;
+      height: 40px;
     }
     .info{
-      text-align: right;
       font-size: 10px;
       color: #999;
       padding-bottom: 8px;
@@ -92,12 +160,13 @@ margin-top: 30px;
       margin: 10px 10px 0px 10px;
       padding-bottom: 10px;
       border-bottom: 1px solid #999;
-      height: 80px;
+      height: 94px;
       overflow: hidden;
+      line-height: 19px;
     }
-    .tag{
-      text-align: right;
+    .price{
       margin: 10px 10px 0 10px;
+      color: red;
 
     }
   }
@@ -105,16 +174,36 @@ margin-top: 30px;
 
 // 記事投稿
 .container{
-  .sub-title{
-    font-weight: bold;
+  .new-product{
+    p{
+      margin: 0;
+    }
+    label{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .sub-title{
+      font-weight: bold;
+      margin-top: 30px;
+    }
+    .form-group{
+      margin: 0;
+    }
+    
+    .uk-htmleditor{
+      margin-bottom: 30px;
+      margin-top: 20px;
+    
+      .uk-htmleditor-navbar{
+        background: #33333329;
+      }
+    }
+    .thumbnail-field{
+    margin-bottom: 5px;
+    margin-top: 20px;
+    }
   }
-  .uk-htmleditor{
-    margin-bottom: 30px;
-  
-  .uk-htmleditor-navbar{
-    background: #33333329;
-  }
- }
 }
 
 

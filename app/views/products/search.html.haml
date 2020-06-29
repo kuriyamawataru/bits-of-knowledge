@@ -1,0 +1,45 @@
+= render "/layouts/header"
+
+.container
+  .search
+  = form_tag(search_products_path, :method => "get") do
+    = text_field_tag :keyword, '',class:"search_field",placeholder:"気になるキーワードを検索"
+    = submit_tag "検索",class:"search_button"
+
+  - if @search_products.present?
+    %span.title
+      検索結果
+    - @search_products.each do |product|
+      .col-xs-6.col-md-3
+        .box
+          .thumbnail
+            = image_tag product.thumbnail,class:"product-image"
+          .product-title
+            = product.name
+          .info
+            %span.name
+              わたる
+            %span.date
+              = product.created_at.strftime("%Y年%m月%d日")
+          .explanation
+            = product.explanation
+  - else
+    %span.title
+      キーワードに該当するものがありません
+    %span.title
+      新着記事
+    - @products.each do |product|
+      .col-xs-6.col-md-3
+        .box
+          .thumbnail
+            = image_tag product.thumbnail,class:"product-image"
+          .product-title
+            = product.name
+          .info
+            %span.name
+              わたる
+            %span.date
+              = product.created_at.strftime("%Y年%m月%d日")
+          .explanation
+            = product.explanation
+= render "/layouts/footer"

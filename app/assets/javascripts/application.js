@@ -12,19 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require inline-attachment
 //= require jquery.inline-attachment
 //= require_tree .
 
-$(function () {
-  $('.uploadable').inlineattachment({
-    urlText: '<img src="{filename}">',
-    uploadUrl: "/path/to/create",
-    uploadFieldName: "asset[file]",
-    allowedTypes: ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'],
-    extraHeaders: { "X-CSRF-Token": $("meta[name=csrf-token]").attr("content") }
-  });
-});
+
+
 

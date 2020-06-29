@@ -40,176 +40,32 @@
             お支払いはカードで簡単
           %p.list__description
             クレジットカードを登録して簡単お支払い
-      .products-container
-        .products-box
-          %h2
-            新着記事
-          .products-box__lists
-            .products-box__list
-              .products-box__img
-                = image_tag "test_image.jpg",class:"product-image"
-                
-              .products-box__tag
-                %p
-                  タグ名
-                .products-box__title
-                  %p
-                    タイトルをここに入力
-                .products-box__data
-                  %p
-                    2019/10/29
-                  %p
-                    500円
-            .products-box__list
-              .products-box__img
-                = image_tag "test_image.jpg",class:"product-image"
-                
-              .products-box__tag
-                %p
-                  タグ名
-                .products-box__title
-                  %p
-                    タイトルをここに入力
-                .products-box__data
-                  %p.date
-                    2019/10/29
-                  %p.price
-                    500円
-            .products-box__list
-              .products-box__img
-                = image_tag "test_image.jpg",class:"product-image"
-                
-              .products-box__tag
-                %p
-                  タグ名
-                .products-box__title
-                  %p
-                    タイトルをここに入力
-                .products-box__data
-                  %p
-                    2019/10/29
-                  %p
-                    500円
-            .products-box__list
-              .products-box__img
-                = image_tag "test_image.jpg",class:"product-image"
-                
-              .products-box__tag
-                %p
-                  タグ名
-                .products-box__title
-                  %p
-                    タイトルをここに入力
-                .products-box__data
-                  %p
-                    2019/10/29
-                  %p
-                    500円
-            .products-box__list
-              .products-box__img
-                = image_tag "test_image.jpg",class:"product-image"
-                
-              .products-box__tag
-                %p
-                  タグ名
-                .products-box__title
-                  %p
-                    タイトルをここに入力
-                .products-box__data
-                  %p
-                    2019/10/29
-                  %p
-                    500円
-        .products-box
-          %h2
-            人気カテゴリー
-          .products-box__lists
-            .products-box__list
-              .products-box__img
-                = image_tag "test_image.jpg",class:"product-image"
-                
-              .products-box__tag
-                %p
-                  タグ名
-                .products-box__title
-                  %p
-                    タイトルをここに入力
-                .products-box__data
-                  %p
-                    2019/10/29
-                  %p
-                    500円
-            .products-box__list
-              .products-box__img
-                = image_tag "test_image.jpg",class:"product-image"
-                
-              .products-box__tag
-                %p
-                  タグ名
-                .products-box__title
-                  %p
-                    タイトルをここに入力
-                .products-box__data
-                  %p.date
-                    2019/10/29
-                  %p.price
-                    500円
-            .products-box__list
-              .products-box__img
-                = image_tag "test_image.jpg",class:"product-image"
-                
-              .products-box__tag
-                %p
-                  タグ名
-                .products-box__title
-                  %p
-                    タイトルをここに入力
-                .products-box__data
-                  %p
-                    2019/10/29
-                  %p
-                    500円
-            .products-box__list
-              .products-box__img
-                = image_tag "test_image.jpg",class:"product-image"
-                
-              .products-box__tag
-                %p
-                  タグ名
-                .products-box__title
-                  %p
-                    タイトルをここに入力
-                .products-box__data
-                  %p
-                    2019/10/29
-                  %p
-                    500円
-            .products-box__list
-              .products-box__img
-                = image_tag "test_image.jpg",class:"product-image"
-                
-              .products-box__tag
-                %p
-                  タグ名
-                .products-box__title
-                  %p
-                    タイトルをここに入力
-                .products-box__data
-                  %p
-                    2019/10/29
-                  %p
-                    500円
+  .products.row
+    %p
+      こんな記事が購入されています
+    - @products.each do |product|
+      .col-xs-6.col-md-3
+        = link_to product_path(product.id), class:"product-link" do
+          .box
+            .thumbnail
+              = image_tag product.thumbnail,class:"product-image"
+            .product-title
+              = product.name
+            .info
+              %span.name
+                = product.nickname
+              %span.date
+                = product.created_at.strftime("%Y年%m月%d日")
+            .explanation
+              = product.explanation
+            .price
+              = "#{product.price}円"
+  
+  %p.products-link
+    = link_to products_path, class:"product-link" do
+      %span
+        >>他の商品記事を見てみる
+
+
+
 = render "/layouts/footer"
-              
-                          
-        
-
-
-
-
-
-
-    
-
-
-

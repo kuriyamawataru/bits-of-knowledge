@@ -18,6 +18,8 @@
   .footer-brand {
     h2 {
       margin: 0px 0px 10px;
+      color: rgba(255, 255, 255, 0.7);
+
     }
 
     p {
@@ -52,6 +54,8 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.7);
+
     }
 
     ul.list {
@@ -83,6 +87,8 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.7);
+
     }
 
     li {
@@ -105,6 +111,8 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.7);
+
     }
 
     p {
@@ -120,4 +128,10 @@
       border-left: solid 1px rgba(255, 255, 255, 0.1);
     }
   }
+}
+.search_button{
+  color: #000000a1
+}
+.search_field{
+  color: black;
 }

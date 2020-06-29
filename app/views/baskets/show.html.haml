@@ -1,4 +1,6 @@
-.container
+= render "/layouts/header"
+
+.container.basket
   .container__header
     %h2.center 買い物かごの中身
     %h3.basket__total-amount
@@ -10,6 +12,8 @@
         %th{:scope => "col"}
         %th{:scope => "col"} 商品名
         %th{:scope => "col"} 値段
+        %th{:scope => "col"}
+
     - @products.each do |product|
       %tbody
         %tr
@@ -23,3 +27,5 @@
       - @products.each do |p|
         = hidden_field_tag 'product_ids[]', p.id
       %script.stripe-button{"src": "https://checkout.stripe.com/checkout.js", "data": { "key": ENV['STRIPE_API_KEY'], "description": "payment", "amount": @total_price, "locale": "auto", "currency": "jpy"}}
+
+= render "/layouts/footer"

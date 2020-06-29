@@ -21,6 +21,6 @@ class ChargesController < ApplicationController
     ids = product_ids.map { |id| { product_id: id} }
     purchase_record.purchase_record_products.create!(ids)
 
-    redirect_to root_path, notice: '決済に成功しました'
+    redirect_to products_path, notice: '決済に成功しました'
   end
 end

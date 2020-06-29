@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   resource :basket, only: %i(show)
   resource :charge, only: %i(create)
 
+
   resources :products, only: %i(index show new create) do
+    collection do
+      get 'search'
+    end  
+  
     scope module: :products do
       resources :add_to_baskets, only: %i(create) 
       resources :delete_in_baskets, only: %i(create)

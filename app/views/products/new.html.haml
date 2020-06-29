@@ -5,19 +5,22 @@
 %h2.text-center
   商品記事の投稿
 .container
-  = simple_form_for @product do |f|
-    = f.input :name, label: '商品記事名'
-    = f.file_field :thumbnail, label: 'サムネイル画像'
-    %p.sub-title
-      記事内容（無料記事）
-    = f.text_area :explanation,{"data-uk-htmleditor" => "{markdown:true}",class: 'uploadable'}
-    %p.sub-title
-      記事内容（有料記事）
-    = f.text_area :description,{"data-uk-htmleditor" => "{markdown:true}"}
-    = f.input :tag_list, label: 'タグ', value: @product.tag_list.join(',')
-    = f.input :price, label: '価格'
-    .new-button
-      = f.button :button,{name:'submit',value: '1',class: 'btn btn-primary'} do
-        投稿する
+  .new-product
+    = simple_form_for @product do |f|
+      = f.input :name,label:"商品記事名",placeholder:"記事名を入力"
+      %p.sub-title
+        サムネイル画像選択
+      = f.file_field :thumbnail, class:"thumbnail-field"
+      %p.sub-title
+        記事内容（無料記事）
+      = f.text_area :explanation,{"data-uk-htmleditor" => "{markdown:true}",label:"aaa"}
+      %p.sub-title
+        記事内容（有料記事）
+      = f.text_area :description,{"data-uk-htmleditor" => "{markdown:true}"}
+      = f.input :tag_list, value: @product.tag_list.join(','),placeholder:"例: rails, php, 言語", label:"タグリスト"
+      = f.input :price, label:"価格",placeholder:"価格を入力"
+      .new-button
+        = f.button :button,{name:'submit',value: '1',class: 'btn btn-primary'} do
+          投稿する
 
 = render "/layouts/footer"

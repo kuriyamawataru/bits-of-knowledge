@@ -1,151 +1,29 @@
 = render "/layouts/header"
 
-
-
-.product.container
+.container
+  .search
+    = form_tag(search_products_path, :method => "get") do
+      = text_field_tag :keyword, '',class:"search_field",placeholder:"気になるキーワードを検索"
+      = submit_tag "検索",class:"search_button"
   %span.title
-    生き物
-  .row
-    .col-xs-6.col-md-4
-      .box
-        .thumbnail
-          = image_tag @product.thumbnail,class:"product-image"
-        .product-title
-          = @product.name
-        .info
-          %span.name
-            わたる
-          %span.date
-            2020/06/04
-        .explanation
-          = @product.explanation
-        .tag
-          動物　環境　ペット
-    .col-xs-6.col-md-4
-      .box
-        .thumbnail
-          = image_tag "test_image.jpg",class:"product-image"
-        .product-title
-          カワウソが絶滅危惧種に認定される。今後、国内繁殖のみの販売に限定
-        .info
-          %span.name
-            わたる
-          %span.date
-            2020/06/04
-        .explanation
-          癒される存在として知られる「カワウソ」そんなカワウソの生態系が脅かされているのである 
-        .tag
-          動物　環境　ペット
-    .col-xs-6.col-md-4
-      .box
-        .thumbnail
-          = image_tag "test_image.jpg",class:"product-image"
-        .product-title
-          カワウソが絶滅危惧種に認定される。今後、国内繁殖のみの販売に限定
-        .info
-          %span.name
-            わたる
-          %span.date
-            2020/06/04
-        .explanation
-          癒される存在として知られる「カワウソ」そんなカワウソの生態系が脅かされているのである 
-        .tag
-          動物　環境　ペット
-  %span.title
-    生き物
-  .row
-    .col-xs-6.col-md-4
-      .box
-        .thumbnail
-          = image_tag "test_image.jpg",class:"product-image"
-        .product-title
-          カワウソが絶滅危惧種に認定される。今後、国内繁殖のみの販売に限定
-        .info
-          %span.name
-            わたる
-          %span.date
-            2020/06/04
-        .explanation
-          癒される存在として知られる「カワウソ」そんなカワウソの生態系が脅かされているのである 
-        .tag
-          動物　環境　ペット
-    .col-xs-6.col-md-4
-      .box
-        .thumbnail
-          = image_tag "test_image.jpg",class:"product-image"
-        .product-title
-          カワウソが絶滅危惧種に認定される。今後、国内繁殖のみの販売に限定
-        .info
-          %span.name
-            わたる
-          %span.date
-            2020/06/04
-        .explanation
-          癒される存在として知られる「カワウソ」そんなカワウソの生態系が脅かされているのである 
-        .tag
-          動物　環境　ペット
-    .col-xs-6.col-md-4
-      .box
-        .thumbnail
-          = image_tag "test_image.jpg",class:"product-image"
-        .product-title
-          カワウソが絶滅危惧種に認定される。今後、国内繁殖のみの販売に限定
-        .info
-          %span.name
-            わたる
-          %span.date
-            2020/06/04
-        .explanation
-          癒される存在として知られる「カワウソ」そんなカワウソの生態系が脅かされているのである 
-        .tag
-          動物　環境　ペット
-  %span.title
-    生き物
-  .row
-    .col-xs-6.col-md-4
-      .box
-        .thumbnail
-          = image_tag "test_image.jpg",class:"product-image"
-        .product-title
-          カワウソが絶滅危惧種に認定される。今後、国内繁殖のみの販売に限定
-        .info
-          %span.name
-            わたる
-          %span.date
-            2020/06/04
-        .explanation
-          癒される存在として知られる「カワウソ」そんなカワウソの生態系が脅かされているのである 
-        .tag
-          動物　環境　ペット
-    .col-xs-6.col-md-4
-      .box
-        .thumbnail
-          = image_tag "test_image.jpg",class:"product-image"
-        .product-title
-          カワウソが絶滅危惧種に認定される。今後、国内繁殖のみの販売に限定
-        .info
-          %span.name
-            わたる
-          %span.date
-            2020/06/04
-        .explanation
-          癒される存在として知られる「カワウソ」そんなカワウソの生態系が脅かされているのである 
-        .tag
-          動物　環境　ペット
-    .col-xs-6.col-md-4
-      .box
-        .thumbnail
-          = image_tag "test_image.jpg",class:"product-image"
-        .product-title
-          カワウソが絶滅危惧種に認定される。今後、国内繁殖のみの販売に限定
-        .info
-          %span.name
-            わたる
-          %span.date
-            2020/06/04
-        .explanation
-          癒される存在として知られる「カワウソ」そんなカワウソの生態系が脅かされているのである 
-        .tag
-          動物　環境　ペット
-
+    記事一覧
+  .products
+    - @products.each do |product|
+      .col-xs-6.col-md-3
+        = link_to product_path(product.id), class:"product-link" do
+          .box
+            .thumbnail
+              = image_tag product.thumbnail,class:"product-image"
+            .product-title
+              = product.name
+            .info
+              %span.name
+                = product.nickname
+              %span.date
+                = product.created_at.strftime("%Y年%m月%d日")
+            .explanation
+              = product.explanation
+            .price
+              = "#{product.price}円"
+  
 = render "/layouts/footer"

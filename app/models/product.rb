@@ -10,5 +10,9 @@ class Product < ApplicationRecord
   validates :explanation, presence: true
   validates :price, presence: true
 
+  def self.search(search)
+    return Product.all unless search
+    Product.where('name LIKE(?)', "%#{search}%").order(created_at: :desc)
+  end
 
 end

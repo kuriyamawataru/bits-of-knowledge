@@ -1,11 +1,11 @@
 %footer.footer-bs
   .row
     .col-md-3.footer-brand
-      %h2 Bits　Of　Knowledge
-      %p Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.
-      %p &#xA9; 2014 BS3 UI Kit, All rights reserved
+      %h2 Bits of knowledge
+      %p あなたの「知識」が誰かの「知らない」を無くす。
+      %p 些細だと思っているあなたの知識が誰かを救うかも
     .col-md-4.footer-nav
-      %h4 Menu &#x2014;
+      %h4 Menu
       .col-md-6
         %ul.pages
           %li
@@ -42,11 +42,6 @@
       %p 気になるキーワードを検索してみましょう
       %p
         .input-group
-          %input.form-control{:placeholder => "Search for...", :type => "text"}
-            %span.input-group-btn
-              %button.btn.btn-default{:type => "button"}
-                %span.glyphicon.glyphicon-envelope
-  %section{:style => "text-align:center; margin:10px auto;"}
-    %p
-      Designed by
-      %a{:href => "http://enfoplus.net"} Prince J. Sargbah
+          = form_tag(search_products_path, :method => "get") do
+            = text_field_tag :keyword, '',class:"search_field",placeholder:"キーワードを検索"
+            = submit_tag "検索",class:"search_button"
