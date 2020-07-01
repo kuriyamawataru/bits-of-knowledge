@@ -1,5 +1,5 @@
 # Bits-Of-knowledge
-<img width="1440" alt="b6bbb234ae1f4a7e25a3f0cf3ed63de7" src="https://user-images.githubusercontent.com/63355560/83845633-3e1e2880-a744-11ea-8791-51f18aefce89.png">
+<img width="1440" alt="個人アプリトップ画" src="https://user-images.githubusercontent.com/63355560/86223242-3f673780-bbc2-11ea-8aa0-1b3a4c9a0eb4.png">
 
 
 ## 概要
