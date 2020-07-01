@@ -3,24 +3,36 @@
 
 
 ## 概要
-このアプリはユーザーが自身の知識・情報に値段を付け、自由に売買出来るアプリです。
+このアプリはユーザーが自身のIT知識・情報に値段を付け、自由に売買出来るアプリです。
 購入ユーザーのみが記事の内容を読むことが出来ます。
 
 ## 制作背景
   プログラミングを学び始めて苦労したのは、情報を集めることでした。そんな時に助けられたのが、Qiita（キータ）を始めとする様々な情報サイトでした。
-  プログラミングだけに留まらず、同じように情報不足で困る人がもっと少なくなれば良いな、という願いの下、自分自身もそのようなWEBアプリを作ってみたいと考えて
+  同じように情報不足で困る人がもっと少なくなれば良いな、という願いの下、自分自身もそのようなWEBアプリを作ってみたいと考えて
   制作を始めました。また、スクールでは個人でブログアプリ・記事投稿アプリを制作し、チーム体制でフリマアプリの制作を実施しました。
   今回の制作でこれまで学んだことを再度実装を通じて学び直す、自身が携われなかった機能を自身でも実装することで知識の定着化を図る意図も含まれています。
  
-## 実装予定機能（一部実装済）
+## 実装機能
 
 * 購入機能
-* 出品機能
+* 出品機能（マークダウン入力）
+* 画像投稿機能（出品時）
 * 購入履歴表示機能
 * コメント機能
-* カテゴリ機能
+* タグ機能
 * ログイン機能
-* javascript・CSSによる動的ページ（各ページ）
+* 検索機能
+
+## 実装予定機能
+
+* 編集機能
+* 削除機能
+* マイページ
+* 画像のドラッグ＆ドロップ機能
+* CSS,javascripitを使用した動的要素
+
+
+
 
 
 
@@ -40,8 +52,6 @@
 
 
 ### Association
-- has_many :products
-- has_many :cards
 - has_one :basket
 - has_one :purchase_record
 
@@ -60,8 +70,7 @@
 ### Association
 - has_many :basket_products
 - has_many :purchase_records through: :purchase_records_products
-- has_many :tags through: :products_tags
-- belongs_to :user
+
 
 
 
@@ -87,25 +96,6 @@
 - belongs_to :product
 
 
-## tagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|String|null: false|
-
-### Association
-- has_many :product_tags
-- has_many :products, through: :product_tags
-
-
-## product_tagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|product|References|null: false,foreign_key: true, index: true|
-|tag|Refernces|null: false,foreign_key: true, index: true|
-
-### Association
-- belongs_to :tag
-- belongs_to :product
 
 ## purchase_recordsテーブル
 |Column|Type|Options|
