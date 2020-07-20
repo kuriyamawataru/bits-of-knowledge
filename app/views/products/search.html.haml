@@ -11,18 +11,21 @@
       検索結果
     - @search_products.each do |product|
       .col-xs-6.col-md-3
-        .box
-          .thumbnail
-            = image_tag product.thumbnail,class:"product-image"
-          .product-title
-            = product.name
-          .info
-            %span.name
-              わたる
-            %span.date
-              = product.created_at.strftime("%Y年%m月%d日")
-          .explanation
-            = product.explanation
+        = link_to product_path(product.id), class:"product-link" do
+          .box
+            .thumbnail
+              = image_tag product.thumbnail,class:"product-image"
+            .product-title
+              = product.name
+            .info
+              %span.name
+                = product.nickname
+              %span.date
+                = product.created_at.strftime("%Y年%m月%d日")
+            .explanation
+              = product.explanation
+            .price
+              = "#{product.price}円"
   - else
     %span.title
       キーワードに該当するものがありません
@@ -30,16 +33,17 @@
       新着記事
     - @products.each do |product|
       .col-xs-6.col-md-3
-        .box
-          .thumbnail
-            = image_tag product.thumbnail,class:"product-image"
-          .product-title
-            = product.name
-          .info
-            %span.name
-              わたる
-            %span.date
-              = product.created_at.strftime("%Y年%m月%d日")
-          .explanation
-            = product.explanation
+        = link_to product_path(product.id), class:"product-link" do
+          .box
+            .thumbnail
+              = image_tag product.thumbnail,class:"product-image"
+            .product-title
+              = product.name
+            .info
+              %span.name
+                わたる
+              %span.date
+                = product.created_at.strftime("%Y年%m月%d日")
+            .explanation
+              = product.explanation
 = render "/layouts/footer"
