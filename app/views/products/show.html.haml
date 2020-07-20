@@ -5,8 +5,7 @@
     .product-top
       .product-title
         .date
-          = link_to "/" do 
-            2020/06/30
+          = @product.created_at.strftime("%Y年%m月%d日")
         .thumbnail
           = image_tag @product.thumbnail
         %h1.main-title
